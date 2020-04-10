@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import pomodoroClockReducer from '../features/pomodoro-clock/pomodoroClockSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    pomodoroClock: pomodoroClockReducer,
   },
 });
