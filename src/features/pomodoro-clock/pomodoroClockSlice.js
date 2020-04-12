@@ -14,6 +14,11 @@ export const pomodoroClockSlice = createSlice({
         changeState: state => {
             state.timerIsOn = !state.timerIsOn;
         },
+        reset: state => {
+            state.minutesLeft = state.sessionLength;
+            state.secondsLeft = 0;
+            state.timerIsOn = false;
+        },
         decrement: state => {
             if (state.secondsLeft > 0) {
                 state.secondsLeft -= 1;
@@ -25,7 +30,7 @@ export const pomodoroClockSlice = createSlice({
     },
 });
 
-export const {changeState, decrement} = pomodoroClockSlice.actions;
+export const {changeState, decrement, reset} = pomodoroClockSlice.actions;
 
 
 export const selectBreakLength = state => state.pomodoroClock.breakLength.toString();

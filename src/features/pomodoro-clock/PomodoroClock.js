@@ -25,7 +25,7 @@ function PomodoroClock() {
                         <TimeSpanLengthControl
                             caption="Break length"
                             id='break'
-                            value = {breakLength}
+                            value={breakLength}
                         />
                     </Col>
                     <Col>
@@ -46,8 +46,6 @@ function PomodoroClock() {
                         <TimerControl/>
                     </Col>
                 </Row>
-
-
             </Container>
 
         </div>
