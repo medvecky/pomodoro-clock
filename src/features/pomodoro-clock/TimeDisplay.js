@@ -3,7 +3,8 @@ import Card from "react-bootstrap/Card";
 import {useSelector} from "react-redux";
 import {
     selectMinutes,
-    selectSeconds
+    selectSeconds,
+    selectTimerMode
 } from "./pomodoroClockSlice";
 
 function timeToDisplay(time) {
@@ -16,6 +17,7 @@ function timeToDisplay(time) {
 function TimeDisplay(props) {
     const seconds = useSelector(selectSeconds);
     const minutes = useSelector(selectMinutes);
+    const timerMode = useSelector(selectTimerMode);
 
     let minutesToDisplay = timeToDisplay(minutes);
     let secondsToDisplay = timeToDisplay(seconds);
@@ -26,7 +28,7 @@ function TimeDisplay(props) {
                 text='info'
                 border='info'>
                 <Card.Header id='timer-label'>
-                    Session
+                    {timerMode}
                 </Card.Header>
                 <Card.Body
                     id='time-left'

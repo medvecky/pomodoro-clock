@@ -9,7 +9,7 @@ import {selectIsOn} from './pomodoroClockSlice';
 import {useDispatch} from "react-redux";
 import {changeState, decrement, reset} from './pomodoroClockSlice';
 
-function useTimer(isTimerOn) {
+function useTimer() {
     const intervalRef = useRef(null);
     const dispatch = useDispatch();
     const start = useCallback(() => {
@@ -32,7 +32,7 @@ function useTimer(isTimerOn) {
     return {start, stop};
 }
 
-function TimerControl() {
+function TimerControl(props) {
     const dispatch = useDispatch();
     const isTimerOn = useSelector(selectIsOn);
     const {start, stop} = useTimer();
@@ -67,6 +67,7 @@ function TimerControl() {
                                     id='reset'
                                     onClick={() => {
                                         stop();
+                                        props.stopSound();
                                         dispatch(reset());
                                     }}
                                 >

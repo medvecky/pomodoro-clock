@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card, {CardBody} from "react-bootstrap/Card";
+import Card from "react-bootstrap/Card";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from '@fortawesome/free-solid-svg-icons'
 import {faMinus} from '@fortawesome/free-solid-svg-icons'
@@ -26,6 +26,7 @@ function TimeSpanLengthControl(props) {
                                 <Button
                                     variant="outline-info"
                                     id={props.id + '-increment'}
+                                    onClick={props.increment}
                                 >
                                     <FontAwesomeIcon
                                         color="lightseagreen"
@@ -40,6 +41,7 @@ function TimeSpanLengthControl(props) {
                                 <Button
                                     variant="outline-info"
                                     id={props.id + '-decrement'}
+                                    onClick={props.decrement}
                                 >
                                     <FontAwesomeIcon
                                         color="lightseagreen"
